@@ -1,1 +1,2 @@
 # PalindromeCheckerApp
+checking readme
