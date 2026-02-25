@@ -5,25 +5,26 @@ public class PalindromeCheckerApp {
     public static void main(String[] args) {
 
         // Define the input string
-        String input = "refer";
+        String input = "level";
 
-        // Create a Deque
-        Deque<Character> deque = new ArrayDeque<>();
+        // Create a LinkedList to store characters
+        LinkedList<Character> list = new LinkedList<>();
 
-        // Insert each character into deque
+        // Add each character to the linked list
         for (char c : input.toCharArray()) {
-            deque.addLast(c);
+            list.add(c);
         }
 
-        // Flag to track palindrome result
+        // Flag to track palindrome state
         boolean isPalindrome = true;
 
-        // Compare front and rear characters
-        while (deque.size() > 1) {
-            char front = deque.removeFirst();
-            char rear  = deque.removeLast();
+        // Compare until only one or zero elements remain
+        while (list.size() > 1) {
 
-            if (front != rear) {
+            char first = list.removeFirst();
+            char last  = list.removeLast();
+
+            if (first != last) {
                 isPalindrome = false;
                 break;
             }
